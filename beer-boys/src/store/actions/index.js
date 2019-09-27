@@ -1,4 +1,3 @@
-import { setState } from "react";
 import axios from "axios";
 
 export const FETCH_BREWERY_START = "FETCH_BREWERY_START";

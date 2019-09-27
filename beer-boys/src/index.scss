@@ -13,5 +13,49 @@ code {
 }
 
 .beerImage {
+  padding-top: 50px;
   width: 50%;
+}
+
+.brewery-page {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.find-brew-btn {
+  width: 200px;
+  height: 60px;
+  font-size: 1.4rem;
+  font-family: arial;
+  font-weight: 600;
+  background-color: forestgreen;
+  color: white;
+  border-radius: 40px;
+  border: black 3px solid;
+}
+
+.brew-container {
+  background-color: #b47a1d;
+  width: 400px;
+  margin-top: 20px;
+  color: white;
+
+  .brew-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+
+  .brew-street {
+    font-size: 1rem;
+  }
+
+  .brew-site {
+    text-decoration: none;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
 }

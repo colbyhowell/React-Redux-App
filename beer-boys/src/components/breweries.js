@@ -18,10 +18,12 @@ const BreweryList = ({ getBreweries, breweries, isFetching, error }) => {
   }
 
   return (
-    <>
-      <button onClick={findBrews}>Find A Brewery</button>
+    <div className="brewery-page">
+      <button onClick={findBrews} className="find-brew-btn">
+        Find A Brewery
+      </button>
       <div className="brew-container">
-        <div className="brew-name">Brewery:{breweries.name}</div>
+        <div className="brew-name">Brewery: {breweries.name}</div>
         <div className="brew-street">Street: {breweries.street}</div>
         <div className="brew-city">City: {breweries.city}</div>
         <div className="brew-state">State: {breweries.state}</div>
@@ -30,7 +32,7 @@ const BreweryList = ({ getBreweries, breweries, isFetching, error }) => {
         </div>
       </div>
       <h3>{error}</h3>
-    </>
+    </div>
   );
 };
 
