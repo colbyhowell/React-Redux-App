@@ -1,9 +1,15 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
+import BreweryList from "./components/breweries";
+
 function App() {
-  return <div className="App">Hi!</div>;
+  return (
+    <div className="App">
+      <h1>YO YO BEER</h1>
+      <BreweryList />
+    </div>
+  );
 }
 
 export default App;
