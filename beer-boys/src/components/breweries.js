@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import { connect } from "react-redux";
 import { getBreweries } from "../store/actions/index";
@@ -8,16 +8,29 @@ const BreweryList = ({ getBreweries, breweries, isFetching, error }) => {
     getBreweries();
   }, [getBreweries]);
 
-  const [location, setLocation] = useState("");
-
-  const updateLocation = e => {
-    setLocation(e.target.value);
+  const findBrews = e => {
+    e.preventDefault();
+    getBreweries();
   };
 
+  if (isFetching) {
+    return <h2>Locating Brewery</h2>;
+  }
+
   return (
-    <div>
-      <button onClick={() => updateLocation}>Find Breweries</button>
-    </div>
+    <>
+      <button onClick={findBrews}>Find A Brewery</button>
+      <div className="brew-container">
+        <div className="brew-name">Brewery:{breweries.name}</div>
+        <div className="brew-street">Street: {breweries.street}</div>
+        <div className="brew-city">City: {breweries.city}</div>
+        <div className="brew-state">State: {breweries.state}</div>
+        <div className="brew-site">
+          Website: <a href="{breweries.website_url}">{breweries.website_url}</a>
+        </div>
+      </div>
+      <h3>{error}</h3>
+    </>
   );
 };
 
@@ -31,5 +44,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { getBreweries }
+  { getBreweries: getBreweries }
 )(BreweryList);
